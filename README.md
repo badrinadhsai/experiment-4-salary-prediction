@@ -71,18 +71,18 @@ Four regression algorithms were trained and evaluated:
 
 | Model | R2 Score | MAE | RMSE |
 |-------|----------|-----|------|
-| **Gradient Boosting** | **0.9354** | 8,979 | 12,145 |
-| Random Forest | 0.9310 | 8,505 | 12,555 |
-| Linear Regression | 0.9166 | 10,056 | 13,799 |
-| Decision Tree | 0.8632 | 11,355 | 17,671 |
+| **Gradient Boosting** | **0.8882** | 10,687 | 14,533 |
+| Random Forest | 0.8764 | 10,588 | 15,281 |
+| Linear Regression | 0.8670 | 12,304 | 15,851 |
+| Decision Tree | 0.8102 | 12,671 | 18,938 |
 
 ## Best Model
 
-**Gradient Boosting** achieved the highest R2 score of **0.9354**, explaining approximately 93.5% of the variance in employee salaries.
+**Gradient Boosting** achieved the highest R2 score of **0.8882**, explaining approximately 88.8% of the variance in employee salaries.
 
-- R2 Score: 0.9354
-- MAE: $8,979
-- RMSE: $12,145
+- R2 Score: 0.8882
+- MAE: $10,687
+- RMSE: $14,533
 
 ## MLflow Tracking
 
@@ -98,10 +98,17 @@ MLflow was used for experiment tracking and model logging:
 
 ```
 experiment-4-salary-prediction/
+├── experiment-4.ipynb
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
-├── experiment-4.ipynb
+├── Salary_Data_Raw.csv
+├── salary_processed_pipeline.csv
+├── X_train.csv
+├── X_test.csv
+├── y_train.csv
+├── y_test.csv
+├── actual_vs_predicted.csv
 ├── model_results.csv
 ├── best_salary_model.pkl
 ├── salary_prediction_model.pkl
@@ -155,7 +162,7 @@ experiment-4-salary-prediction/
 
 ## Results
 
-The experiment successfully demonstrated that ensemble methods (Gradient Boosting, Random Forest) outperform linear models on this dataset. Gradient Boosting achieved the best performance with an R2 score of 0.9354, making it the selected model for salary prediction.
+The experiment successfully demonstrated that ensemble methods (Gradient Boosting, Random Forest) outperform linear models on this dataset. Gradient Boosting achieved the best performance with an R2 score of 0.8882, making it the selected model for salary prediction.
 
 ## Author
 
