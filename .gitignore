@@ -17,6 +17,8 @@ eggs/
 .ipynb_checkpoints/
 
 # MLflow tracking (regenerable)
+mlruns/
+mlflow.db
 salary_mlops/data/mlruns/
 
 # Large model artifacts (regenerable)

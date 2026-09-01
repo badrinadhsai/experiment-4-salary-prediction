@@ -22,9 +22,9 @@ The experiment uses the **Salary Data** dataset containing employee information 
 | Salary | Numerical | Annual salary (target variable) |
 
 **Dataset Statistics:**
-- Rows after cleaning: 372 (removed outlier with salary = 350)
-- Salary range: $30,000 - $250,000
-- Mean salary: ~$100,577
+- Rows after cleaning: 325 (removed duplicates and missing values)
+- Salary range: $350 - $250,000
+- Features: 5 input columns, 1 target column
 
 ## Technologies Used
 
@@ -54,13 +54,12 @@ The preprocessing pipeline includes:
 
 ## Machine Learning Algorithms
 
-Five regression algorithms were trained and evaluated:
+Four regression algorithms were trained and evaluated:
 
 1. **Linear Regression** - Baseline linear model
-2. **Ridge Regression** - L2 regularized linear model
-3. **Lasso Regression** - L1 regularized linear model
-4. **Random Forest Regressor** - Ensemble of decision trees (300 estimators)
-5. **Gradient Boosting Regressor** - Sequential ensemble boosting
+2. **Decision Tree Regressor** - Tree-based model (max_depth=10)
+3. **Random Forest Regressor** - Ensemble of decision trees (100 estimators)
+4. **Gradient Boosting Regressor** - Sequential ensemble boosting (100 estimators, learning_rate=0.05)
 
 ## Evaluation Metrics
 
@@ -70,21 +69,20 @@ Five regression algorithms were trained and evaluated:
 
 ## Model Comparison
 
-| Model | CV R2 | Test R2 | MAE | RMSE |
-|-------|-------|---------|-----|------|
-| **Lasso** | 0.8846 | **0.9166** | 9,919 | 14,569 |
-| Ridge | 0.9032 | 0.9144 | 9,312 | 14,766 |
-| RandomForest | 0.9136 | 0.9002 | 8,936 | 15,937 |
-| GradientBoosting | 0.8988 | 0.8765 | 10,110 | 17,732 |
-| LinearRegression | 0.8583 | 0.8507 | 12,274 | 19,499 |
+| Model | R2 Score | MAE | RMSE |
+|-------|----------|-----|------|
+| **Gradient Boosting** | **0.9354** | 8,979 | 12,145 |
+| Random Forest | 0.9310 | 8,505 | 12,555 |
+| Linear Regression | 0.9166 | 10,056 | 13,799 |
+| Decision Tree | 0.8632 | 11,355 | 17,671 |
 
 ## Best Model
 
-**Lasso Regression** achieved the highest Test R2 score of **0.9166**, explaining approximately 91.7% of the variance in employee salaries.
+**Gradient Boosting** achieved the highest R2 score of **0.9354**, explaining approximately 93.5% of the variance in employee salaries.
 
-- Test R2: 0.9166
-- Test MAE: $9,919
-- Test RMSE: $14,569
+- R2 Score: 0.9354
+- MAE: $8,979
+- RMSE: $12,145
 
 ## MLflow Tracking
 
@@ -157,7 +155,7 @@ experiment-4-salary-prediction/
 
 ## Results
 
-The experiment successfully demonstrated that regularized linear models (Lasso, Ridge) outperform ensemble methods on this dataset. Lasso Regression with default parameters achieved the best generalization performance with a Test R2 of 0.9166, making it the selected model for salary prediction.
+The experiment successfully demonstrated that ensemble methods (Gradient Boosting, Random Forest) outperform linear models on this dataset. Gradient Boosting achieved the best performance with an R2 score of 0.9354, making it the selected model for salary prediction.
 
 ## Author
 
