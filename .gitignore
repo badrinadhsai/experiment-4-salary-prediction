@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# MLflow tracking (regenerable)
+salary_mlops/data/mlruns/
+
+# Large model artifacts (regenerable)
+salary_mlops/data/models/salary_best_model.pkl
+salary_mlops/data/models/salary_model.pkl
+
+# Large feature files (regenerable)
+salary_mlops/data/features/X_train_features.csv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log

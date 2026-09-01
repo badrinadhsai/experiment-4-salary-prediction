@@ -1,0 +1,15 @@
+
+SALARY PREDICTION - BEST RESULTS
+=================================
+Dataset: 372 rows after cleaning (removed outlier 350)
+Features: ['Age', 'Gender', 'Education Level', 'Job Title', 'Years of Experience']
+Best Model: RandomForestRegressor
+Params: {'regressor__max_depth': None, 'regressor__max_features': 'sqrt', 'regressor__min_samples_split': 2, 'regressor__n_estimators': 300}
+Test Metrics: MAE=8935.60, RMSE=15937.45, R2=0.9002
+Leaderboard:
+           Model  CV_R2_mean  CV_R2_std  Test_R2     Test_MAE    Test_RMSE
+           Lasso    0.884610   0.007102 0.916629  9918.824418 14569.336541
+           Ridge    0.903204   0.009221 0.914358  9312.480806 14766.376102
+    RandomForest    0.892223   0.010126 0.884265  9746.577778 17165.761288
+GradientBoosting    0.898760   0.013938 0.876501 10110.319767 17732.189300
+LinearRegression    0.858313   0.041508 0.850670 12273.506977 19498.678983
